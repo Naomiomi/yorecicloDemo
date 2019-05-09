@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/encuentra_l"
+        android:layout_width="407dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="512dp"
+        android:background="@color/colorPrimary"
+        android:foregroundGravity="top"
+        android:gravity="top"
+        android:text="@string/encuentra_l"
+        android:textAppearance="@style/encuentra_l"
+        app:fontFamily="@font/concert_one"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <Button
+        android:id="@+id/plastico"
+        android:layout_width="59dp"
+        android:layout_height="70dp"
+        android:background="@drawable/plastico"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/papel"
+        app:layout_constraintEnd_toEndOf="@+id/papel"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <Button
+        android:id="@+id/papel"
+        android:layout_width="56dp"
+        android:layout_height="69dp"
+        android:background="@drawable/papel"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/elect"
+        app:layout_constraintEnd_toEndOf="@+id/elect"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <Button
+        android:id="@+id/elect"
+        android:layout_width="69dp"
+        android:layout_height="68dp"
+        android:background="@drawable/elect"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/alu"
+        app:layout_constraintEnd_toEndOf="@+id/alu"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <Button
+        android:id="@+id/alu"
+        android:layout_width="61dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginLeft="336dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/aluminio"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/encuentra_l"></Button>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

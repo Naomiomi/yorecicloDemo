@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">mapEx</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="papel">Papel</string>
+    <string name="electronicos">Electronicos</string>
+    <string name="pl_stico">Plástico</string>
+    <string name="yoreciclo">YoReciclo</string>
+    <string name="mxl">mxl</string>
+    <string name="encuentra_l">  ENCUENTRA LOS PUNTOS CERCA DE TI!</string>
+</resources>
