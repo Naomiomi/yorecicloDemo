@@ -19,7 +19,7 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:scaleType="centerCrop"
-            android:src="@drawable/helice"
+            android:src="@drawable/long_helice"
             android:layout_margin="5dp" />
 
         <ScrollView
