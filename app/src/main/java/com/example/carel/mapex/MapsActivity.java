@@ -1,11 +1,13 @@
 package com.example.carel.mapex;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -66,6 +68,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
+    public void AcercaDeNosotrosLaunch(View view){
+        Intent acerca_de_nosotros = new Intent(this, AcercaDeNosotros.class);
+        startActivity(acerca_de_nosotros);
+    }
 
 }
 

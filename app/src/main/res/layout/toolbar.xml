@@ -36,5 +36,17 @@
         tools:layout_editor_absoluteX="384dp"
         tools:layout_editor_absoluteY="5dp" />
 
+    <Button
+        android:id="@+id/acerca_de_nosotros"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/logo_2"
+        android:padding="10dp"
+        android:onClick="AcercaDeNosotrosLaunch"></Button>
+
+
+
+
+
 
 </android.support.v7.widget.Toolbar>
