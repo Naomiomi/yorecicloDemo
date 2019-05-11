@@ -10,22 +10,26 @@
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/yo_reciclo"/>
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center_vertical">
 
-    <Button
-        android:id="@+id/acerca_de_nosotros"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/logo_2"
-        android:padding="10dp"
-        android:onClick="AcercaDeNosotrosLaunch"></Button>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/yo_reciclo"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/logo_2"
+            android:onClick="AcercaDeNosotrosLaunch"></Button>
 
 
-
-
-
+    </LinearLayout>
 
 </android.support.v7.widget.Toolbar>
