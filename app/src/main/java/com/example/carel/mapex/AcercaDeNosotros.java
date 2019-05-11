@@ -13,8 +13,4 @@ public class AcercaDeNosotros extends AppCompatActivity {
         setContentView(R.layout.activity_acerca_de_nosotros);
     }
 
-    public void MapsActivityLaunch(View view){
-        Intent maps_activity = new Intent(this, MapsActivity.class);
-        startActivity(maps_activity);
-    }
 }
