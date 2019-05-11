@@ -10,31 +10,10 @@
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <TextView
-        android:id="@+id/mxl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top|end"
-        android:text="@string/mxl"
-        android:textAppearance="@style/mxl"
-        android:visibility="visible"
-        tools:layout_conversion_absoluteHeight="29dp"
-        tools:layout_conversion_absoluteWidth="43dp"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="17dp" />
-
-    <TextView
-        android:id="@+id/yoreciclo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text="@string/yoreciclo"
-        android:textAppearance="@style/yoreciclo"
-        app:fontFamily="@font/concert_one"
-        tools:layout_conversion_absoluteHeight="54dp"
-        tools:layout_conversion_absoluteWidth="202dp"
-        tools:layout_editor_absoluteX="384dp"
-        tools:layout_editor_absoluteY="5dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/yo_reciclo"/>
 
 
 </android.support.v7.widget.Toolbar>
