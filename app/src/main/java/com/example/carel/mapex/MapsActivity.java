@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -28,7 +29,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private static final String TAG = "MapsActivity";
     private GoogleMap mMap;
+    private RequestQueue queue;
+    private JSONArray puntosTotales;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +45,196 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        queue = Volley.newRequestQueue(this);
+        obtenerDatos();
+
+        Button botonPlastico = (Button) findViewById(R.id.plastico);
+        Button botonPapel = (Button) findViewById(R.id.papel);
+        Button botonElec = (Button) findViewById(R.id.elect);
+        Button botonAlum = (Button) findViewById(R.id.alu);
+
+// FUNCION DEL BOTON PARA MARCAR LOS PUNTOS DE ACOPIO DE PLASTICO
+        botonPlastico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //limpiamos el mapa por si hay marcadores
+                mMap.clear();
+
+
+                Log.d(TAG, "onClick: BOTON PLASTICO!");
+                for (int i = 0; i < puntosTotales.length(); i++) {
+
+                    try {
+                        JSONObject punto = puntosTotales.getJSONObject(i);
+                        if (punto.getJSONArray("materials").length() == 1) {
+                            if (punto.getJSONArray("materials").getJSONObject(0).getString("name").compareTo("Plastico") == 0) {
+                                Log.d(TAG, "Encontré un punto de plasttico");
+                                LatLng punto2 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                mMap.addMarker(new MarkerOptions().position(punto2).title(punto.getString("name")));
+                            }
+                        } else{
+                            for(int x=0;x<punto.getJSONArray("materials").length();x++){
+                                if (punto.getJSONArray("materials").getJSONObject(x).getString("name").compareTo("Plastico") == 0) {
+                                    Log.d(TAG, "Encontré un punto de plasttico");
+                                    LatLng punto3 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                    mMap.addMarker(new MarkerOptions().position(punto3).title(punto.getString("name")));
+                                }
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        });
 
 
 
+        //FUNCION BOTON PAPEL
 
+        botonPapel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //limpiamos el mapa por si hay marcadores
+                mMap.clear();
+
+
+                Log.d(TAG, "onClick: BOTON PAPEL!");
+                for (int i = 0; i < puntosTotales.length(); i++) {
+
+                    try {
+                        JSONObject punto = puntosTotales.getJSONObject(i);
+                        if (punto.getJSONArray("materials").length() == 1) {
+                            if (punto.getJSONArray("materials").getJSONObject(0).getString("name").compareTo("Papel") == 0) {
+                                Log.d(TAG, "Encontré un punto de papel");
+                                LatLng punto2 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                mMap.addMarker(new MarkerOptions().position(punto2).title(punto.getString("name")));
+                            }
+                        } else{
+                            for(int x=0;x<punto.getJSONArray("materials").length();x++){
+                                if (punto.getJSONArray("materials").getJSONObject(x).getString("name").compareTo("Papel") == 0) {
+                                    Log.d(TAG, "Encontré un punto de papel");
+                                    LatLng punto3 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                    mMap.addMarker(new MarkerOptions().position(punto3).title(punto.getString("name")));
+                                }
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+
+        //FUNCION DE BOTON ALUMNIO
+        botonAlum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //limpiamos el mapa por si hay marcadores
+                mMap.clear();
+
+
+                Log.d(TAG, "onClick: BOTON ALUMINIO!");
+                for (int i = 0; i < puntosTotales.length(); i++) {
+
+                    try {
+                        JSONObject punto = puntosTotales.getJSONObject(i);
+                        if (punto.getJSONArray("materials").length() == 1) {
+                            if (punto.getJSONArray("materials").getJSONObject(0).getString("name").compareTo("Alumnio") == 0) {
+                                Log.d(TAG, "Encontré un punto de alumnio");
+                                LatLng punto2 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                mMap.addMarker(new MarkerOptions().position(punto2).title(punto.getString("name")));
+                            }
+                        } else{
+                            for(int x=0;x<punto.getJSONArray("materials").length();x++){
+                                if (punto.getJSONArray("materials").getJSONObject(x).getString("name").compareTo("Aluminio") == 0) {
+                                    Log.d(TAG, "Encontré un punto de aluminio");
+                                    LatLng punto3 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                    mMap.addMarker(new MarkerOptions().position(punto3).title(punto.getString("name")));
+                                }
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        botonElec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //limpiamos el mapa por si hay marcadores
+                mMap.clear();
+
+
+                Log.d(TAG, "onClick: BOTON ELECTRONICOS!");
+                for (int i = 0; i < puntosTotales.length(); i++) {
+
+                    try {
+                        JSONObject punto = puntosTotales.getJSONObject(i);
+                        if (punto.getJSONArray("materials").length() == 1) {
+                            if (punto.getJSONArray("materials").getJSONObject(0).getString("name").compareTo("Electronicos") == 0) {
+                                Log.d(TAG, "Encontré un punto de Electronicos");
+                                LatLng punto2 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                mMap.addMarker(new MarkerOptions().position(punto2).title(punto.getString("name")));
+                            }
+                        } else{
+                            for(int x=0;x<punto.getJSONArray("materials").length();x++){
+                                if (punto.getJSONArray("materials").getJSONObject(x).getString("name").compareTo("Electronicos") == 0) {
+                                    Log.d(TAG, "Encontré un punto de Electronicos");
+                                    LatLng punto3 = new LatLng(punto.getDouble("lat"), punto.getDouble("lng"));
+                                    mMap.addMarker(new MarkerOptions().position(punto3).title(punto.getString("name")));
+                                }
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
+
+
+
+    private void obtenerDatos(){
+
+    String url = "https://api.myjson.com/bins/11auqe";
+
+    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        @Override
+        public void onResponse(JSONObject response) {
+                    Log.d(TAG,"Entre al response");
+            try {
+                puntosTotales = response.getJSONArray("puntos");
+                    Log.d(TAG,String.valueOf(puntosTotales.length()));
+                for (int i=0 ; i< puntosTotales.length();i++){
+                    JSONObject punto = puntosTotales.getJSONObject(i);
+                    Double longitud = punto.getDouble("lng");
+                    Double latitud = punto.getDouble("lat");
+                    Log.d(TAG,String.valueOf( latitud));
+                    Log.d(TAG,String.valueOf( longitud));
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Log.d(TAG,"Ocurrio un error");
+            }
+        }
+    }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+
+        }
+    });
+
+     queue.add(request);
+    }
+
 
 
     /**
@@ -62,9 +251,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         /// Add a marker in Sydney and move the camera
-        LatLng punto = new LatLng(32.6469, -115.446000);
-        mMap.addMarker(new MarkerOptions().position(punto).title("Fundación Hélice A.C"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(punto,80));
+        LatLng punto = new LatLng(32.6469, -115.446);
+      //  mMap.addMarker(new MarkerOptions().position(punto).title("Fundación Hélice A.C"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(punto,11));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(punto));
 
     }
 
