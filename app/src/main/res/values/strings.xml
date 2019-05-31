@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">mapEx</string>
     <string name="title_activity_maps">Map</string>
     <string name="papel">Papel</string>
@@ -10,4 +10,18 @@
     <string name="acerca_de_nosotros_1"> Fundación Hélice es una asociación civil sin fines de lucro creada en febrero de 2009 por un grupo de ciudadanos con el único compromiso de llevar a cabo acciones de beneficio ambiental en el estado de Baja California. El nombre de esta oganización se deriva del modelo de triple Hélice a través del cual interactuamos con 3 ejes fundamentales de la sociedad: educativo, empresarial y de gobierno; por medio de nuestros programas y campañas</string>
     <string name="acerca_de_nosotros_2"> \"Si supiera que el mundo se acaba mañana, yo, hoy todavía, plantaría un árbol\" </string>
     <string name="boton_volver"> Volver </string>
+    <string name="title_activity_navigation_drawer" tools:ignore="ExtraTranslation">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
 </resources>
