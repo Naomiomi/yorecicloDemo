@@ -207,17 +207,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //Menú Lateral
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -226,8 +215,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
     }
-
-
 
     private void obtenerDatos(){
 
