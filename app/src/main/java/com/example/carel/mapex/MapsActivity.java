@@ -321,8 +321,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             Intent acerca_de_helice = new Intent(this, AcercaDeHelice.class);
             startActivity(acerca_de_helice);
         } else if (id == R.id.nav_acerca_yoreciclo) {
-            Intent acerca_de_nosotros = new Intent(this, AcercaDeHelice.class);
-            startActivity(acerca_de_nosotros);
+            Intent acerca_de_yo_reciclo = new Intent(this, AcercaDeYoReciclo.class);
+            startActivity(acerca_de_yo_reciclo);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
