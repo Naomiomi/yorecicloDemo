@@ -1,24 +1,20 @@
 package com.example.carel.mapex;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -51,6 +47,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -272,7 +269,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void AcercaDeNosotrosLaunch(View view){
-        Intent acerca_de_nosotros = new Intent(this, AcercaDeNosotros.class);
+        Intent acerca_de_nosotros = new Intent(this, AcercaDeHelice.class);
         startActivity(acerca_de_nosotros);
     }
 
@@ -314,23 +311,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_eco_tips) {
+            Intent ecotips = new Intent(this, Ecotips.class);
+            startActivity(ecotips);
+        } else if (id == R.id.nav_como_reciclar) {
+            Intent como_reciclar = new Intent(this, ComoReciclar.class);
+            startActivity(como_reciclar);
+        } else if (id == R.id.nav_acerca_helice) {
+            Intent acerca_de_helice = new Intent(this, AcercaDeHelice.class);
+            startActivity(acerca_de_helice);
+        } else if (id == R.id.nav_acerca_yoreciclo) {
+            Intent acerca_de_nosotros = new Intent(this, AcercaDeHelice.class);
+            startActivity(acerca_de_nosotros);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void CargarFragmento(Fragment fragment){
+        FragmentManager fManager = getSupportFragmentManager();
+        fManager.beginTransaction().replace(R.id.drawer_layout, fragment).commit();
     }
 }
 

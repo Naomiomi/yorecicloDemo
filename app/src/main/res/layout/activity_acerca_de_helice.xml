@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AcercaDeNosotros">
+    android:id="@+id/acerca_de_nosotros"
+    tools:context=".AcercaDeHelice">
 
 
     <LinearLayout
@@ -29,7 +30,7 @@
             android:padding="15dp">
 
             <include
-                layout="@layout/acerca_de_nosotros_texto"></include>
+                layout="@layout/acerca_de_helice_contenido"></include>
 
         </ScrollView>
 
